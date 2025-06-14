@@ -65,7 +65,7 @@
         contexto.fillRect(0, 0, tela.width, tela.height);
     }
 
-    //desenharCenario();
+
 
     let cobrinha = [{ x: 5, y: 5 }];
 
@@ -76,19 +76,19 @@
         }
     }
 
-    //desenharCobrinha();
+  
     let direcao = "direita";
-let podeMudarDirecao = true; // Variável de controle
+let podeMudarDirecao = true;
 
 document.addEventListener("keydown", function (evento) {
-    if (!podeMudarDirecao) return; // Impede múltiplas teclas simultâneas
+    if (!podeMudarDirecao) return; 
 
     if (evento.key === "ArrowUp" && direcao !== "baixo") direcao = "cima";
     if (evento.key === "ArrowDown" && direcao !== "cima") direcao = "baixo";
     if (evento.key === "ArrowLeft" && direcao !== "direita") direcao = "esquerda";
     if (evento.key === "ArrowRight" && direcao !== "esquerda") direcao = "direita";
 
-    podeMudarDirecao = false; // Bloqueia mudança de direção até o próximo ciclo
+    podeMudarDirecao = false; 
 });
 
 function moverCobrinha() {
@@ -102,7 +102,7 @@ function moverCobrinha() {
     cobrinha.unshift(cabeca);
     cobrinha.pop();
 
-    podeMudarDirecao = true; // Libera mudança de direção após o movimento
+    podeMudarDirecao = true; 
 }
 
     let intervaloJogo;
@@ -177,7 +177,7 @@ function moverCobrinha() {
     function verificarColisoes() {
         let cabeca = cobrinha[0];
 
-        // Paredes
+      
         if (
             cabeca.x < 0 || cabeca.x >= totalBlocos ||
             cabeca.y < 0 || cabeca.y >= totalBlocos
@@ -185,7 +185,7 @@ function moverCobrinha() {
             gameOver();
         }
 
-        // Corpo
+      
         for (let i = 1; i < cobrinha.length; i++) {
             if (cabeca.x === cobrinha[i].x && cabeca.y === cobrinha[i].y) {
                 gameOver();
